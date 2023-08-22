@@ -29,6 +29,25 @@ function App() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [receita, setReceita] = useState("");
+
+  useEffect(() => {
+    async function consultarReceitas() {
+      const dados = onSnapshot(collection(db, "receitas"), (snapshot) => {
+        let listaReceitas = []
+        snapshot.forEach((doc) => {
+          listaReceitas.push({
+            id: doc.id,
+            titulo: doc.data().titulo,
+            ingredientes: doc.data().ingredientes,
+            modoPreparo: doc.data().modoPreparo,
+          })
+        })
+        setReceita(listaReceitas)
+      })
+    }
+    consultarReceitas()
+  }, [])
+
 }
 
 export default App;
