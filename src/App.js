@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
+import { db, au } from "./firebaseConnection";
+
+import {
+  doc,
+  setDoc,
+  collection,
+  addDoc,
+  getDoc,
+  getDocs,
+  updateDoc,
+  deleteDoc,
+  onSnapshot
+} from 'firebase/firestore'
+
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
+} from 'firebase/auth'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferre"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [titulo, setTitulo] = useState("");
+  const [ingredientes, setIngredientes] = useState("");
+  const [modoPreparo, setModoPreparo] = useState("");
+  const [idReceita, setIdReceita] = useState("")
+
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+  const [receita, setReceita] = useState("");
 }
 
 export default App;
