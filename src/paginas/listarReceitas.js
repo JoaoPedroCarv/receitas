@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom"; 
-import { collection, onSnapshot } from "firebase/firestore"; 
+import { Link } from "react-router-dom";
+import { collection, onSnapshot } from "firebase/firestore";
 import { db } from "../firebaseConnection";
 
 function ListaTitulosReceitas() {
@@ -24,15 +24,18 @@ function ListaTitulosReceitas() {
   }
 
   return (
-    <div>
+    <div className="princ">
       <h1>Lista de Receitas</h1>
-      <ul>
+      <ul className="lista">
         {titulosReceitas.map((receita) => (
-          <li key={receita.id}>
-            <Link to={`/detalhes/${receita.id}`}>{receita.titulo}</Link>
+          <li key={receita.id} className="titulo">
+            <Link to={`/detalhes/${receita.id}`} className="link">
+              {receita.titulo}
+            </Link>
           </li>
         ))}
       </ul>
+
     </div>
   );
 }

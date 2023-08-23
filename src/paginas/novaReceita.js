@@ -30,7 +30,7 @@ function CriarReceita() {
   };
 
   return (
-    <div>
+    <div className="princ">
       <h1>Criar Nova Receita</h1>
       <form onSubmit={handleCriarReceita}>
         <label>

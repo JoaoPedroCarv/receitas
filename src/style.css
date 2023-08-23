@@ -1,0 +1,35 @@
+.princ {
+    padding: 16px;
+}
+
+.lista {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    counter-reset: item;
+}
+
+.titulo {
+    margin-bottom: 10px;
+}
+
+.link {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.link:hover {
+    color: #007bff;
+}
+
+/* Estilo para o número do item */
+.link::before {
+
+    counter-increment: item;
+    position: absolute;
+    left: -20px;
+    font-weight: bold;
+    color: #333;
+}
