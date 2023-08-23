@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom"; // Importe o Link para navegação
-import { collection, onSnapshot } from "firebase/firestore"; // Importe as bibliotecas corretamente
+import { Link } from "react-router-dom"; 
+import { collection, onSnapshot } from "firebase/firestore"; 
 import { db } from "../firebaseConnection";
 
 function ListaTitulosReceitas() {
@@ -25,7 +25,7 @@ function ListaTitulosReceitas() {
 
   return (
     <div>
-      <h1>Lista de Títulos de Receitas</h1>
+      <h1>Lista de Receitas</h1>
       <ul>
         {titulosReceitas.map((receita) => (
           <li key={receita.id}>

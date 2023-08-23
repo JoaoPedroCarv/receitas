@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom"; // Importe a biblioteca de roteamento
-import { doc, getDoc } from "firebase/firestore"; // Importe as bibliotecas corretamente
+import { useParams } from "react-router-dom"; 
+import { doc, getDoc } from "firebase/firestore"; 
 import { db } from "../firebaseConnection";
 
 function DetalhesReceita() {
@@ -16,6 +16,10 @@ function DetalhesReceita() {
     if (receitaDoc.exists()) {
       setReceita(receitaDoc.data());
     }
+  }
+
+  if (!receita) {
+    return <div>Carregando...</div>;
   }
 
   return (

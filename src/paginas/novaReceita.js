@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { collection, addDoc } from "firebase/firestore"; // Importe as bibliotecas corretamente
+import { collection, addDoc } from "firebase/firestore"; 
 import { db } from "../firebaseConnection";
 
 function CriarReceita() {
