@@ -1,8 +1,14 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+
+import DetalhesReceita from "./paginas/detalhesReceitas";
+
 import Header from "./componentes/cabecalho";
-import Inicio from "./paginas/adicionar";
+
 import Erro from "./paginas/erro";
+
+import ListaTitulosReceitas from "./paginas/listarReceitas";
+import CriarReceita from "./paginas/novaReceita";
 
 
 function RoutesApp() {
@@ -10,9 +16,10 @@ function RoutesApp() {
         <BrowserRouter>
             <Header />
             <Routes>
-                <Route path="/" element={<Inicio />}></Route>
-                
+                <Route path="/" element={<ListaTitulosReceitas />}></Route>
+                <Route path="/detalhes/:id" element={<DetalhesReceita />} />
                 <Route path="*" element={<Erro />}></Route>
+                <Route path="/add" element={<CriarReceita />}></Route>
             </Routes>
         </BrowserRouter>
     )
